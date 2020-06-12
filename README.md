@@ -2,7 +2,7 @@
 Simple implementation of external sorting algorithm.
 
 The assumption is made that the elements in the file are stored with the same endianness as the host has.  
-exosrt allow to choose sorting direction as well as element size. See usage details below.  
+exsort allow to choose sorting direction as well as element size. See usage details below.  
 
 ```shell
 Usage:
@@ -17,9 +17,9 @@ exsort { -h | <-i inputFilePath> [-o outputFilePath] [-s ramSize] [-e elSize] [-
 
 There are 2 helper utility called randomfile and checkfile.  
 
-randomfile may be used to generate randomfile.  
+randomfile may be used to generate rando mfile.  
 This utility is not developed with optimization in mind, but  
-it's still much more faster then /dev/random. See usage below.  
+it's still much more faster then /dev/random. See usage details below.  
 ```shell
 Usage: 
 randomfile { -h | <-o outputFilePath> <-s fileSize>}
@@ -42,13 +42,13 @@ checkfile {-h | <-i inputFilePath> <-e elementSize> [-r]}
 
 Example usage  
 
-Crete big random file, ~11GB  
+Create big random file, ~11GB  
 ```shell
 out/bin/randomfile -o /tmp/random -s 10737418240
 ```
 
 Sort given file with element size 8, buffer size 10KB  
-You may increase buffer size, to increase sorting speed
+You may increase buffer size to increase sorting speed
 
 ```shel
 time out/bin/exsort  -i /tmp/random -o /tmp/random_8_sorted -s 10485760 -e 8
